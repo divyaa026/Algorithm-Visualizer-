@@ -12,10 +12,10 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
     
     - name: Set up JDK 17
-      uses: actions/setup-java@v3
+      uses: actions/setup-java@v4
       with:
         java-version: '17'
         distribution: 'temurin'
@@ -23,14 +23,14 @@ jobs:
     
     - name: Build Backend
       working-directory: ./backend
-      run: mvn clean package -DskipTests
+      run: ./mvnw clean package -DskipTests
     
     - name: Test Backend
       working-directory: ./backend
-      run: mvn test
+      run: ./mvnw test
     
     - name: Upload Backend Artifact
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: backend-jar
         path: backend/target/*.jar
@@ -40,25 +40,23 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
     
     - name: Setup Node.js
-      uses: actions/setup-node@v3
+      uses: actions/setup-node@v4
       with:
         node-version: '18'
-        cache: 'npm'
-        cache-dependency-path: algo-canvas/package-lock.json
     
     - name: Install Dependencies
       working-directory: ./algo-canvas
-      run: npm ci
+      run: npm install
     
     - name: Build Frontend
       working-directory: ./algo-canvas
       run: npm run build
     
     - name: Upload Frontend Artifact
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: frontend-dist
         path: algo-canvas/dist
@@ -70,15 +68,11 @@ jobs:
     if: github.ref == 'refs/heads/main'
     
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
     
     - name: Set up Docker Buildx
-      uses: docker/setup-buildx-action@v2
+      uses: docker/setup-buildx-action@v3
     
     - name: Build Backend Image
       working-directory: ./backend
       run: docker build -t algoviz-backend:${{ github.sha }} .
-    
-    - name: Build Frontend Image
-      working-directory: ./algo-canvas
-      run: docker build -t algoviz-frontend:${{ github.sha }} .
