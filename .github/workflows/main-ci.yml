@@ -23,11 +23,11 @@ jobs:
     
     - name: Build Backend
       working-directory: ./backend
-      run: ./mvnw clean package -DskipTests
+      run: mvn clean package -DskipTests
     
     - name: Test Backend
       working-directory: ./backend
-      run: ./mvnw test
+      run: mvn test
     
     - name: Upload Backend Artifact
       uses: actions/upload-artifact@v4

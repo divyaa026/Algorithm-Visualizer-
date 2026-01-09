@@ -26,11 +26,11 @@ jobs:
     
     - name: Build with Maven
       working-directory: ./backend
-      run: ./mvnw clean install -DskipTests
+      run: mvn clean install -DskipTests
     
     - name: Run Tests
       working-directory: ./backend
-      run: ./mvnw test
+      run: mvn test
     
     - name: Build Docker Image
       if: github.ref == 'refs/heads/main'
