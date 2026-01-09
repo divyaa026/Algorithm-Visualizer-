@@ -1,6 +1,6 @@
 # 🎯 Algorithm Visualizer
 
-[![Live Demo](https://img.shields.io/badge/Live-Demo-brightgreen?style=for-the-badge&logo=vercel)](https://algorithm-visualizer.vercel.app)
+[![Live Demo](https://img.shields.io/badge/Live-Demo-brightgreen?style=for-the-badge&logo=vercel)](https://algovisualizer-snowy.vercel.app)
 [![Java](https://img.shields.io/badge/Java-17+-orange?style=for-the-badge&logo=openjdk)](https://openjdk.org/)
 [![React](https://img.shields.io/badge/React-18+-blue?style=for-the-badge&logo=react)](https://react.dev/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5+-blue?style=for-the-badge&logo=typescript)](https://www.typescriptlang.org/)
@@ -41,7 +41,7 @@ Algorithm Visualizer is a comprehensive educational platform designed to help de
 
 ## 🚀 Live Demo
 
-🔗 **[View Live Demo on Vercel](https://algorithm-visualizer.vercel.app)**
+🔗 **[View Live Demo on Vercel](https://algovisualizer-snowy.vercel.app)**
 
 ---
 
