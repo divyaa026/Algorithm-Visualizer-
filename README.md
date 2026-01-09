@@ -417,7 +417,7 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 ### Divya
 
 [![GitHub](https://img.shields.io/badge/GitHub-divyaa026-181717?style=for-the-badge&logo=github)](https://github.com/divyaa026)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0A66C2?style=for-the-badge&logo=linkedin)](https://linkedin.com/in/your-profile)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0A66C2?style=for-the-badge&logo=linkedin)](https://www.linkedin.com/in/divyabhatt026/)
 
 ---
 
