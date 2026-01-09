@@ -1,0 +1,243 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Cream/Beige Theme with Pink/Red Accents */
+    --background: 35 30% 92%;
+    --foreground: 350 65% 35%;
+
+    --card: 35 35% 88%;
+    --card-foreground: 350 65% 30%;
+
+    --popover: 35 35% 90%;
+    --popover-foreground: 350 65% 30%;
+
+    --primary: 350 70% 50%;
+    --primary-foreground: 35 30% 95%;
+
+    --secondary: 15 60% 55%;
+    --secondary-foreground: 35 30% 95%;
+
+    --muted: 35 25% 85%;
+    --muted-foreground: 350 30% 45%;
+
+    --accent: 340 75% 55%;
+    --accent-foreground: 35 30% 95%;
+
+    --destructive: 0 84% 50%;
+    --destructive-foreground: 35 30% 95%;
+
+    --success: 160 50% 40%;
+    --success-foreground: 35 30% 95%;
+
+    --warning: 38 80% 50%;
+    --warning-foreground: 350 65% 25%;
+
+    --comparing: 45 85% 55%;
+    --swapping: 350 70% 55%;
+    --sorted: 160 50% 40%;
+    --unsorted: 35 20% 60%;
+
+    --border: 35 25% 80%;
+    --input: 35 25% 82%;
+    --ring: 350 70% 50%;
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 35 30% 88%;
+    --sidebar-foreground: 350 65% 35%;
+    --sidebar-primary: 350 70% 50%;
+    --sidebar-primary-foreground: 35 30% 95%;
+    --sidebar-accent: 35 30% 82%;
+    --sidebar-accent-foreground: 350 65% 35%;
+    --sidebar-border: 35 25% 78%;
+    --sidebar-ring: 350 70% 50%;
+
+    /* Gradients - Warm cream to beige with pink accent */
+    --gradient-primary: linear-gradient(135deg, hsl(350, 70%, 50%) 0%, hsl(15, 60%, 55%) 100%);
+    --gradient-card: linear-gradient(135deg, hsl(35, 35%, 90%) 0%, hsl(35, 30%, 85%) 100%);
+    --gradient-glow: radial-gradient(ellipse at center, hsl(350, 70%, 50%, 0.15) 0%, transparent 70%);
+
+    /* Glassmorphism - Cream tones */
+    --glass-background: hsl(35, 35%, 92%, 0.8);
+    --glass-border: hsl(35, 25%, 75%, 0.6);
+    --glass-shadow: 0 8px 32px hsl(350, 30%, 30%, 0.1);
+  }
+
+  .dark {
+    /* Dark Cream/Beige with Pink/Red Accents */
+    --background: 35 20% 12%;
+    --foreground: 35 30% 90%;
+
+    --card: 35 20% 16%;
+    --card-foreground: 35 30% 90%;
+
+    --popover: 35 20% 16%;
+    --popover-foreground: 35 30% 90%;
+
+    --primary: 350 70% 60%;
+    --primary-foreground: 35 20% 10%;
+
+    --secondary: 15 55% 55%;
+    --secondary-foreground: 35 20% 10%;
+
+    --muted: 35 15% 22%;
+    --muted-foreground: 35 20% 65%;
+
+    --accent: 340 70% 60%;
+    --accent-foreground: 35 20% 10%;
+
+    --destructive: 0 75% 55%;
+    --destructive-foreground: 35 30% 95%;
+
+    --success: 160 50% 45%;
+    --success-foreground: 35 20% 10%;
+
+    --warning: 38 80% 55%;
+    --warning-foreground: 35 20% 10%;
+
+    --comparing: 45 85% 55%;
+    --swapping: 350 70% 55%;
+    --sorted: 160 50% 45%;
+    --unsorted: 35 15% 45%;
+
+    --border: 35 15% 25%;
+    --input: 35 15% 25%;
+    --ring: 350 70% 60%;
+
+    --sidebar-background: 35 20% 10%;
+    --sidebar-foreground: 35 30% 90%;
+    --sidebar-primary: 350 70% 60%;
+    --sidebar-primary-foreground: 35 20% 10%;
+    --sidebar-accent: 35 15% 18%;
+    --sidebar-accent-foreground: 35 30% 90%;
+    --sidebar-border: 35 15% 22%;
+    --sidebar-ring: 350 70% 60%;
+
+    --glass-background: hsl(35, 20%, 15%, 0.8);
+    --glass-border: hsl(35, 15%, 30%, 0.5);
+    --glass-shadow: 0 8px 32px hsl(0, 0%, 0%, 0.3);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+
+  code, pre {
+    font-family: 'JetBrains Mono', monospace;
+  }
+
+  /* Custom Scrollbar Styles */
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: hsl(var(--muted));
+    border-radius: 5px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, hsl(var(--primary)) 0%, hsl(var(--secondary)) 100%);
+    border-radius: 5px;
+    border: 2px solid hsl(var(--muted));
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(180deg, hsl(var(--primary) / 0.9) 0%, hsl(var(--secondary) / 0.9) 100%);
+  }
+
+  ::-webkit-scrollbar-corner {
+    background: hsl(var(--muted));
+  }
+
+  /* Firefox scrollbar */
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: hsl(var(--primary)) hsl(var(--muted));
+  }
+}
+
+@layer components {
+  .glass-card {
+    background: var(--glass-background);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--glass-border);
+    box-shadow: var(--glass-shadow);
+  }
+
+  .gradient-text {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .gradient-border {
+    position: relative;
+    background: var(--gradient-primary);
+    padding: 1px;
+    border-radius: var(--radius);
+  }
+
+  .gradient-border > * {
+    background: hsl(var(--card));
+    border-radius: calc(var(--radius) - 1px);
+  }
+
+  .glow-effect {
+    box-shadow: 0 0 40px hsl(350, 70%, 50%, 0.3),
+                0 0 80px hsl(15, 60%, 55%, 0.15);
+  }
+
+  .bar-unsorted {
+    background: linear-gradient(180deg, hsl(var(--unsorted)) 0%, hsl(var(--unsorted) / 0.7) 100%);
+  }
+
+  .bar-comparing {
+    background: linear-gradient(180deg, hsl(var(--comparing)) 0%, hsl(var(--comparing) / 0.7) 100%);
+    box-shadow: 0 0 20px hsl(var(--comparing) / 0.5);
+  }
+
+  .bar-swapping {
+    background: linear-gradient(180deg, hsl(var(--swapping)) 0%, hsl(var(--swapping) / 0.7) 100%);
+    box-shadow: 0 0 20px hsl(var(--swapping) / 0.5);
+  }
+
+  .bar-sorted {
+    background: linear-gradient(180deg, hsl(var(--success)) 0%, hsl(var(--success) / 0.7) 100%);
+    box-shadow: 0 0 15px hsl(var(--success) / 0.4);
+  }
+}
+
+@layer utilities {
+  .animate-glow {
+    animation: glow 2s ease-in-out infinite alternate;
+  }
+
+  @keyframes glow {
+    from {
+      box-shadow: 0 0 20px hsl(350, 70%, 50%, 0.3);
+    }
+    to {
+      box-shadow: 0 0 40px hsl(15, 60%, 55%, 0.4);
+    }
+  }
+
+  .animate-pulse-slow {
+    animation: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+}
